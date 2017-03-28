@@ -1,0 +1,40 @@
+{
+  "name": "react-redux-meteor-data",
+  "version": "0.5.2",
+  "description": "This package provides an integration between React, Redux store and Meteor's Tracker.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "local": "nodemon --watch ./src --exec babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tempik/react-redux-meteor-data.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "meteor",
+    "connect",
+    "createContainer"
+  ],
+  "author": "Ivan Ablogin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tempik/react-redux-meteor-data/issues"
+  },
+  "homepage": "https://github.com/tempik/react-redux-meteor-data#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015": "^6.24.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.4.2",
+    "react-meteor-data": "^0.2.10",
+    "react-redux": "^5.0.3"
+  }
+}
