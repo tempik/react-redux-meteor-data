@@ -7,7 +7,7 @@ Redux connector HOC applyes first, then props pass down to meteor HOC.
 Signature: 
 
 ```
-connectMeteor(mapStateToProps, mapDispatchToProps, mapTrackerToProps)(Component)
+connectMeteor(mapTrackerToProps, mapStateToProps, mapDispatchToProps)(Component)
 ```
 
 * First argument:  usual react-meteor-data createContainer function, as documented here:  https://www.npmjs.com/package/react-meteor-data
@@ -42,5 +42,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connectMeteor(mapStateToProps, mapDispatchToProps, mapTrackerToProps)(NodeState);
+export default connectMeteor(mapTrackerToProps, mapStateToProps, mapDispatchToProps)(NodeState);
 ```
