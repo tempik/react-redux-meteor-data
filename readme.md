@@ -15,23 +15,29 @@ connectMeteor(mapTrackerToProps, mapStateToProps, mapDispatchToProps)(Component)
 * Component - React dumb component that you will connect to redux & meteor
 
 
-Example:
+#Example
 
-```
+*MyComponent* will receive *currentId* and *item* props:
+
+```JavaScript
 import connectMeteor from 'react-redux-meteor-data';
+import MyCollection from '/imports/collections/MyCollection.jsx';
+import MyComponent from '/imports/components/MyComponent.jsx';
+import * as actions from '/imports/redux/actions.jsx';
 
 const mapStateToProps = (state, ownProps) => {
+  let currentId = state.selectedId;
   return {
-
-  }
+    currentId
+  };
 }
 
 const mapTrackerToProps = (props) => {
-    Meteor.subscribe('process');
-    let processState = ProcessesState.findOne({_id:  props.id})
+    let sub = Meteor.subscribe('process');
+    let item = MyCollection.findOne({_id:  props.currentId})
 
   return {
-    processState
+    item
   }
 }
 
@@ -42,5 +48,10 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connectMeteor(mapTrackerToProps, mapStateToProps, mapDispatchToProps)(NodeState);
+export default connectMeteor(mapTrackerToProps, mapStateToProps, mapDispatchToProps)(MyComponent);
 ```
+
+
+#Contibution
+
+Please open issue on github.
